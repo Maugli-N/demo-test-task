@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Demo :: TO-GO.RU :: %TITLE%</title>
+<style>
+  <!--
+    body {
+      font-family: Arial;
+      font-size: 10pt;
+      margin: 5pt;
+      text-align: left;
+      color: navy;
+      background-color: white;
+    }
+    h1 {
+      font-size: 12pt;
+      margin: 5pt 0pt 3pt 0pt;
+    }
+    p {
+      margin: 3pt 0pt 1pt 0pt;
+    }
+    table {
+      border: navy 1px solid;
+    }
+    .records {
+      border-collapse: collapse;
+    }
+    td {
+      font-size: 10pt;
+      padding: 1pt 3pt 3pt 3pt;
+      border-top: navy 1px solid;
+      border-left: navy 1px solid;
+    }
+    pre {
+      font-size: 9pt;
+      font-family: Courier New;
+      padding: 8pt 8pt 6pt 8pt;
+      color: grey;
+      background-color: white;
+      border: black 1px solid;
+    }
+    .design {
+      text-align: center;
+    }
+    .design td {
+      font-size: 36pt;
+      font-weight: bold;
+      padding: 1pt 3pt 3pt 3pt;
+      border-top: navy 1px solid;
+      border-left: navy 1px solid;
+    }
+    .box {
+      cursor: default;
+      text-decoration: none;
+    }
+    input {
+      font-size: 10pt;
+      margin: 0pt;
+    }
+    .button {
+      margin-top: 5pt;
+    }
+    .text {
+      margin-top: 5pt;
+      width: 200pt;
+    }
+    .form {
+      border: navy 0px none;
+    }
+    .form td {
+      border: navy 0px none;
+    }
+    .info{
+      padding-top: 6pt;
+    }
+    .current {
+      font-size: 12pt;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+    .another {
+      color: blue;
+      cursor: default;
+      text-decoration: underline solid blue;
+    }
+  //-->
+</style>
+<script type=text/JavaScript>
+  <!--
+    function check_box(app) {
+      box = document.getElementById(app);
+      box.checked = ! box.checked;
+    }
+    function clean_offset() {
+      offset = document.getElementById('offset');
+      offset.value = 0;
+    }
+    function set_offset(page) {
+      button = document.getElementById('submit');
+      offset = document.getElementById('offset');
+      offset.value = (page - 1) * 100;
+      button.click();
+    }
+  //-->
+</script>
+</head>
+<body>
+<table class=design align=center>
+<tr><td>Demo</td><td>.</td>
+    <td>T</td><td>O</td><td>-</td>
+    <td>G</td><td>O</td><td>.</td>
+    <td>R</td><td>U</td></tr>
+</table>
+<h1 class=design>%TITLE%</h1>
+<form action=%ACTION% method=POST name=search id=search>
+<input type=hidden name=offset id=offset value=0>
+<table class=form align=center>
+  <tr>
+    <td class=info>Адрес почты:</td>
+    <td><input class=text type=text name=text id=text
+               value="%TEXT%" onchange="clean_offset();"></td>
+    <td class=info><input type=checkbox name=where id=where
+                          value="log"%WHERE% onchange="clean_offset();">
+      <a class=box onclick="check_box('where');">
+        Искать все записи в таблице &laquo;log&raquo;</a></td>
+    <td><input class=button type=submit name=submit
+               id=submit value="Искать"></td>
+  </tr>
+</table>
+</form>
